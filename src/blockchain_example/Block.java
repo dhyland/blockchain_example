@@ -27,6 +27,10 @@ public class Block {
 		return hash;
 	}
 	
+	public String getPreviousHash(){
+		return previousHash;
+	}
+	
 	public String getData(){
 		return data;
 	}
@@ -50,7 +54,7 @@ public class Block {
 		
 	}
 	
-	private String str() {
+	public String str() {
 		// TODO Auto-generated method stub
 		return index + timestamp + data + previousHash + nonce;
 	}
