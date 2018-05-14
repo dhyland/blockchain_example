@@ -18,12 +18,12 @@ public class Block {
 	
 	// all args constructor. (although technically not all args)
 	public Block(int index0, long timestamp0, String previousHash0, String data0){
-		index=index0;
-		timestamp=timestamp0;
-		previousHash=previousHash0;
-		data=data0;
-		nonce = 0;
-		hash = Block.calculateHash(this);
+		this.index=index0;
+		this.timestamp=timestamp0;
+		this.previousHash=previousHash0;
+		this.data=data0;
+		this.nonce = 0;
+		this.hash = Block.calculateHash(this);
 	}
 	
 	//considering adding or changing constructor so only 1 arg is supplied...
