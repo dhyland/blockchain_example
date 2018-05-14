@@ -3,7 +3,7 @@ package blockchain_example;
 import java.security.*;
 import java.util.*;
 
-//block object will represent a single block inside a blockchain
+//block object will represent a single block inside the blockchain
 public class Block {
 
 	private String hash;
@@ -12,6 +12,9 @@ public class Block {
 	private int index;
 	private long timestamp;
 	private int nonce;
+	
+	//Arraylist of all the transactions, data will be a message for simplicity
+	public ArrayList<Transaction> transactions = new ArrayList<Transaction>(); 
 	
 	// all args constructor. (although technically not all args)
 	public Block(int index0, long timestamp0, String previousHash0, String data0){
@@ -22,6 +25,8 @@ public class Block {
 		nonce = 0;
 		hash = Block.calculateHash(this);
 	}
+	
+	//considering adding or changing constructor so only 1 arg is supplied...
 
 	public String getHash(){
 		return hash;
@@ -55,7 +60,6 @@ public class Block {
 	}
 	
 	public String str() {
-		// TODO Auto-generated method stub
 		return index + timestamp + data + previousHash + nonce;
 	}
 	
@@ -72,6 +76,7 @@ public class Block {
 	
 	// calculate the hash of a given block.
 	public static String calculateHash(Block block){
+		
 		if (block != null){
 			MessageDigest digest = null;
 			
@@ -101,6 +106,23 @@ public class Block {
 		}
 		
 		return null;
+	}
+	
+	//adds a transaction to arrayList "transactions" 
+	public boolean addTransaction(Transaction transaction){
+		//obviously shouldn't add a transaction which is null
+		if(transaction == null){
+			return false;
+		}		
+		if((previousHash != "0")){
+			if((transaction.processTransaction() != true)){
+				System.out.println("Transation did not complete. Transation Discarded.");
+				return false;
+			}
+		}
+		transactions.add(transaction);
+		System.out.println("Transaction was Successful");
+		return true;
 	}
 	
 }

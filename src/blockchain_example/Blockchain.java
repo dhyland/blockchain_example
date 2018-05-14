@@ -7,6 +7,15 @@ public class Blockchain {
 	private int difficulty;
 	private List<Block> blockchain;
 	
+	//static variables so they are shared between each instance. 
+	public static HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>(); //list of all unspent transactions. 
+	public static Wallet walletX;
+	public static Wallet walletY;
+	//any value for the minTransaction value
+	public static float minTransaction = 0.1f;
+	public static Transaction genesisTransaction;
+	
+	//constructor
 	public Blockchain(int difficulty){
 		
 	    this.difficulty = difficulty;
