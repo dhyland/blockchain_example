@@ -58,7 +58,7 @@ public class Wallet {
 	}
 	
 	//Generates and returns a new transaction from this wallet.
-	public Transaction sendFunds(PublicKey _recipient, float value){
+	public Transaction sendFunds(PublicKey payee0, float value){
 		
 		//check if we have enough balance in wallet to send funds
 		if(getBalance() < value){
@@ -79,7 +79,7 @@ public class Wallet {
 			}
 		}
 		
-		Transaction newTransaction = new Transaction(publicKey, _recipient , value, inputs);
+		Transaction newTransaction = new Transaction(publicKey, payee0 , value, inputs);
 		newTransaction.generateSignature(privateKey);
 		
 		//look through each input in inputs
