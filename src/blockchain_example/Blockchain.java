@@ -25,6 +25,7 @@ public class Blockchain {
 	    Block b = new Block(0, System.currentTimeMillis(), null, "First Block");
 	    b.mineBlock(difficulty);
 	    blockchain.add(b);
+	    System.out.println("Genesis block has been mined!: " + b.getHash());
 	  }
 	
 	public Block mostRecentBlock(){
@@ -50,7 +51,11 @@ public class Blockchain {
 	
 	public Block newBlock(String data){
 		Block mostRecent = mostRecentBlock();
-		return new Block(mostRecent.getIndex() + 1, System.currentTimeMillis(), mostRecent.getHash(), data);
+		Block newBlock = new Block(mostRecent.getIndex() + 1, System.currentTimeMillis(), mostRecent.getHash(), data);
+		
+		System.out.println("New block has been mined!: " + newBlock.getHash());
+		
+		return newBlock;
 	}
 	
 	public boolean firstBlockIsValid(){

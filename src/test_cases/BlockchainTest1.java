@@ -20,6 +20,7 @@ public class BlockchainTest1 {
 	  
 	    System.out.println("Check if our blockchain is valid: " + blockchain.blockchainIsValid());
 	    //this will simply print out blockchain block by block... handy :)
+	    System.out.println("\nNow lets take a look at the entire blockchain:");
 	    System.out.println(blockchain);
 	}
 }

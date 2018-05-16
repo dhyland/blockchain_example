@@ -20,6 +20,7 @@ public class BlockchainTest2 {
 	    blockchain.addBlock(blockchain.newBlock("Okay lets stop now"));
 
 	    System.out.println("Check if our blockchain is valid: " + blockchain.blockchainIsValid());
+	    System.out.println("\nNow lets take a look at the entire blockchain:");
 		System.out.println(blockchain);
 
 		//Lets try add a corrupted block into the blockchain
