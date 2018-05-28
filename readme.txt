@@ -9,7 +9,7 @@ Main goals:
 1)Develop personal blockchain to be used in exchanges. (Done)
 2)Wallets which can be used to store coins for different users (Done)
 3)Transactions which users can trade coins between each other (Done)
-4)p2p network (Not Done) -- Currently have branch 2018_1_4 for developing this in future, will be merged with master when functioning correctly along with a test class.
+4)p2p network (work in progress) -- Currently have branch 2018_1_4 for developing this in future, will be merged with master when functioning correctly along with a test class.
 5)Test cases for QA (Done)
 
 QA:
